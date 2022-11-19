@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&family=Poppins:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&family=Poppins:ital,wght@1,100&display=swap');
+
+body{
+    text-align: center;
+    background-color: rgb(158, 170, 166);
+    font-family: 'Poppins', sans-serif ;
+}
+
+.anun{
+  border: 3px solid purple;
+  border-radius: 5px;
+  padding-top: 5px;
+  padding-right: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  margin-bottom: 50px;  
+  display: flex;
+  flex-direction: row;
+}
+
+.fachada{
+    padding-left: 15px;
+    margin-top: 2px;
+    text-align: left; 
+}
+
+.fachada2{
+    text-align: center;
+}
+
+figcaption a{
+    font-weight: 900;
+    border-bottom: 30px;
+    border: 2px solid purple;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 70px;
+    transition: .5s;
+}
+
+figcaption a:hover{
+    background-color: rgb(111, 140, 194); 
+}
+
+img{
+    display: flex;
+    flex-direction: column 10px;
+}
