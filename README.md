@@ -1,4 +1,6 @@
 # Web-motores
-Este projeto é uma loja de carros esportivos na web, que visa facilitar a interação entre loja e cliente.
-A inspiração para este projeto é o site web motors.
+Este projeto é um site de matérias sobre carros, afim de informar matérias interessantes para curiosos ou entusiastas.
 No final do projeto, este site terá três linguagens : html, css e javascript.
+
+This project is a website about cars, in order to inform interesting subjects for curious or enthusiasts.
+At the end of the project, this site will have three programming languages: html, css and javascript.
