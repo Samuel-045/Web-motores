@@ -1,12 +1,5 @@
 window.onload = function (){
-
-    var bttn = document.getElementById("submit")
-    var mensagem = document.getElementById("finalizacao")
-    var dpsgmail = document.getElementById("gmail")
-    var header = document.getElementById("header")
-    var navegation_header = document.getElementById("navigation_header")
-    var showsidebar= "false"
-
+           //função para alterar o titulo da página
     document.addEventListener("visibilitychange", (event)=> {
         if (document.visibilityState==="visible"){
             document.title= "De Bugatti a Rolls-Royce: conheça os 10 carros mais caros do mundo";
@@ -15,7 +8,41 @@ window.onload = function (){
         }
     })
 
+    const form = document.getElementById('form')
+    const email = document.getElementById('email')
+    const name = document.getElementById('name')
 
-   
+    
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault()
+
+        checkInputs()
+    })
+
+    function checkInputs(){
+        const nameValue = name.value.trim()
+        const emailValue = email.value.trim()
+
+        if(nameValue === ''){
+            document.getElementById("error1").innerHTML="Preencha o campo";
+        }else if(nameValue.length <3){
+            document.getElementById("error1").innerHTML="Nome Inválido";
+        }else{
+            document.getElementById("error1").innerHTML="Nome Válido";
+        }
+
+        if(emailValue === ''){
+            document.getElementById("error2").innerHTML="Email Inválido";
+        }else{
+            document.getElementById("error2").innerHTML="Email Válido";
+        }
+
+        if(emailValue != '' && nameValue != '' && nameValue.length>=3){
+            document.getElementById("finalizacao").innerHTML="Cadastro realizado "+emailValue;
+        }
+    }
 
 }
+ 
+
