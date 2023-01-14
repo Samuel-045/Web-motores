@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&family=Poppins:wght@200&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&family=Poppins:ital,wght@1,100&display=swap');
 
+:root{
+    --azul_royal:rgb(141, 109, 255);
+    --azul_sidebar: rgb(7, 3, 59);
+}
+
 /* google fonts */
 body{
     background-color: rgb(158, 170, 166);
@@ -14,18 +19,18 @@ body{
 
 header{
     background: rgb(18, 8, 53);
-    box-shadow: 0.1px 5px 5px rgb(55, 0, 255);
+    box-shadow: 0.1px 5px 5px var(--azul_royal);
     justify-content: space-between;
 }
 
 .logo_header{
     display:flex;
     align-items: center;
-    color:rgb(55, 0, 255);
+    color:var(--azul_royal);
 }
 
 header, .navegation_header{
-    font-size: 1.4vw;
+    font-size: 1.7vw;
     padding: 0.9vw 0.8vw;
     display: flex;
     flex-direction: row;
@@ -39,7 +44,7 @@ header, .navegation_header{
 
 .navegation_header a{
     text-decoration: none;
-    color: rgb(55, 0, 255);
+    color: var(--azul_royal);
     text-align: center;
     gap: 5vw;
 }
@@ -66,14 +71,19 @@ header .btn_header{
 
 @media screen and (max-width:600px){
     header .btn_header{
-        display: block;
+        display:contents
     }    
+
+    header .logo_header p{
+        display: none;
+    }
+
     .navegation_header{
         position:absolute;
         flex-direction: column;
         top: 0;
-        background-color: rgb(14, 8, 102);
-        padding: 2em;
+        background-color: var(--azul_sidebar);
+        padding: 2vh;
         height: 100%;
         width:25vw;
         margin-left: -100vw;
@@ -81,6 +91,8 @@ header .btn_header{
     }
     .navegation_header a{
         margin-top: 0.9vw;
+        color: var(--azul_royal);
+        font-size: 1.3vh;
     }
     }
     
