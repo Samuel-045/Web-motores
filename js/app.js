@@ -46,3 +46,6 @@ window.onload = function (){
 }
  
 
+//adicionar ou refazer os if´s, afim de travar caso o email seja inválido.
+//adicionar uma verificação de data >= 16 anos.
+// pesquisar como realizar uma comparação entre datas.
