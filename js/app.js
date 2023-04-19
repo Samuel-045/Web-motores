@@ -8,17 +8,18 @@ window.onload = function (){
         }
     })
 
-    form.addEventListener('submit', (e) => {
-        e.preventDefault()
-
-        checkInputs()
-    })
+   
 
 
     const form = document.getElementById('form')
     const email = document.getElementById('email')
     const name = document.getElementById('name') 
 
+    form.addEventListener('submit', (e) => {
+        e.preventDefault()
+
+        checkInputs()
+    })
     
     function checkInputs(){
         const nameValue = name.value.trim()
