@@ -147,22 +147,44 @@ img:hover{
     transform:scale(1.1)
 }
 
-.formulario{
-    max-width: 25vw;
-    font-weight: bold;
-    margin:auto;
-    margin-bottom: 1vw;
+#form form{
+    width: 100%;
+    margin: 32px auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .formulario input, button{
     background-color: transparent;
-    border-radius: 5px;
     padding: 0.6vw;
+    width: 100%; 
+}
+
+input{
+    /*reset aparence*/
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+
+    outline: none;
+
+    border: none;
+    border-bottom: 1px solid var(--azul_marinho);
+}
+
+.formulario{
+    max-width: 25vw;
+    font-weight: bold;
+    margin:auto;
     width: 100%;
+    margin-bottom: 1vw;
 }
 
 .formulario .submit{
     font-weight: bold;
+    border-radius: 4px;
+    width: initial;
+    
 }
 
 .formulario .submit:hover{
@@ -203,3 +225,4 @@ img:hover{
     width: auto;
     height: auto;
 }
+
