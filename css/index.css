@@ -22,9 +22,35 @@ body{
     padding: 0vw;
 }
 
+main>h2{ /*Mudança somente para o h2 filho do main */
+    margin-bottom: 10px;
+}
+
+h2{
+    margin: 2vw;
+    word-spacing: 2px;
+    font-weight: 900;
+}
+
+h3{
+    margin: 2vw;
+    word-spacing: 2px;
+    font-weight: 700;
+}
+
+p{
+    margin-left: 2vw;
+    line-height: 25px;
+    letter-spacing: 1px; /*espaçamento entre as letras */
+    word-spacing: 5px; /* espaçamento entre as palavras*/
+    font-weight:600; /* "grossura" das letras */
+    margin-bottom: 10px;
+}
+
 header{
     background:var(--azul_marinho);
     box-shadow: 0.1px 5px 5px var(--branco);
+    display: flex;
     justify-content: space-between;
 }
 
@@ -36,16 +62,14 @@ header{
 
 header, .navegation_header{
     font-size: 1.7vw;
-    padding: 0.9vw 0.8vw;
+    padding: 1vw 1vw;
     display: flex;
     flex-direction: row;
     align-items:center;
-}
-
-.navegation_header{
     gap: 2vw;
     z-index: 2;
 }
+
 
 .navegation_header a{
     text-decoration: none;
@@ -76,12 +100,21 @@ header .btn_header{
 }
 
 @media screen and (max-width:600px){
-    header .btn_header{
-        display:contents
-    }    
+    header{
+        padding: 1.1vw;   
+    }
 
+    header .btn_header{
+        display:block;
+    }    
+    
     header .logo_header p{
         display: none;
+    }
+
+    header .logo_header,
+    header .btn_header{
+        padding: 0 12px;
     }
 
     .navegation_header{
@@ -91,7 +124,7 @@ header .btn_header{
         background-color: var(--azul_sidebar);
         padding: 2vh;
         height: 100%;
-        width:25vw;
+        width:30vw;
         margin-left: -100vw;
         animation-duration: 0.8s;
     }
@@ -104,10 +137,10 @@ header .btn_header{
     
     @keyframes showSideBar {
         from {margin-left: -100vw;}
-        top {margin-left: -1vw;} 
+        top {margin-left: -1.5vw;} 
     }
     @keyframes showSideBar2{
-        from {margin-left: -1vw;}
+        from {margin-left: -1.5vw;}
         top {margin-left: -100vw;}
     }
 
@@ -123,15 +156,6 @@ h1,h2,h2{
     font-family: 'Poppins', sans-serif;
 }
 
-p{
-    margin: 0.5vw;
-    margin-left: 2vw;
-    line-height: 25px;
-    letter-spacing: 1px; /*espaçamento entre as letras */
-    word-spacing: 5px; /* espaçamento entre as palavras*/
-    font-weight: bold; /* "grossura" das letras */
-}
-
 img{
     border-radius: 7px;
     cursor:pointer;
@@ -141,7 +165,8 @@ img{
     width: auto;
     height: auto;
     display: block;
-    margin-left: 2.6vw;
+    margin-left: 4.5vw;
+    margin-bottom: 7px;
 }
 
 img:hover{
@@ -210,12 +235,9 @@ img:hover{
     padding: 0.2vw;
 }
 
-
-
 .footer{
     color:var(--branco);
     background: var(--azul_marinho);
-    font-size: 0.9vw;
     margin: initial;
     padding: initial;
     padding: 1.5vw;
@@ -227,19 +249,11 @@ img:hover{
     justify-content:space-between ;
 }
 
-.footer p{
-    text-decoration: none;
-    color:var(--branco);
-    text-align:center;
-    display: flex;
-}
-
 .footer img{
     max-width: initial;
     max-height: initial;
     max-width: 50px;
     max-height: 50px;
-    width: auto;
-    height: auto;
+
 }
 
