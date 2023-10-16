@@ -60,9 +60,13 @@ header{
     color:var(--branco);
 }
 
+.logo_header img{
+    min-width: 40px;
+    min-height: 40px;
+}
+
 header, .navegation_header{
     font-size: 1.7vw;
-    padding: 1vw 1vw;
     display: flex;
     flex-direction: row;
     align-items:center;
@@ -200,7 +204,7 @@ img:hover{
     padding: 0.6vw;
 }
 
-.formulario input, submit{
+.formulario input{
     /*reset aparence*/
     -moz-appearance: none;
     -webkit-appearance: none;
@@ -215,9 +219,11 @@ img:hover{
     width: 100%;
 }
 
-.formulario submit{
+.formulario .submit{
     font-weight: bold;
+    letter-spacing: 1px;
     width: 100%;
+    
 }
 
 .formulario .submit:hover{
@@ -240,13 +246,15 @@ img:hover{
     background: var(--azul_marinho);
     margin: initial;
     padding: initial;
-    padding: 1.5vw;
+    padding: 20px;
 }
 
 .alinhamento{
     margin-top: 0.6vw;
-    display: flex;
-    justify-content:space-between ;
+}
+
+.alinhamento a{
+    color: white;
 }
 
 .footer img{
@@ -254,6 +262,7 @@ img:hover{
     max-height: initial;
     max-width: 50px;
     max-height: 50px;
-
+    min-height: 30px;
+    min-width: 30px;
 }
 
