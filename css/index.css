@@ -234,7 +234,8 @@ img:hover{
     cursor: pointer;
 }
 
-.formulario span.erro{
+.formulario span.erro,
+.formulario .errorGeral{
     display: flex;
     padding: 0;
     color:var(--branco);
