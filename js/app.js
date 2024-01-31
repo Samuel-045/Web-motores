@@ -8,12 +8,13 @@ window.onload = function (){
         }
     })
 
+
     function checkInputs(){
         var auxErro=false //variaveis para ativar a mensagem de erro geral <-
         var auxErro2=false// <-
         const nameValue = document.getElementById('name').value.trim()
         const emailValue = document.getElementById('email').value.trim()
-
+        
         if(nameValue === ''){
             document.getElementById("error1").innerHTML="Preencha o campo";
             auxErro = true
@@ -53,9 +54,41 @@ window.onload = function (){
         checkInputs()
     })
 
+    var main = document.querySelector('.main')
+        var nav = document.getElementById('navegation_header')
+        var showsdbr= false
+    
+        function toggleBar(){ 
+            showsdbr= !showsdbr
+            if(showsdbr){
+                nav.style.marginLeft= '-1.5vw';
+                nav.style.animationName= 'showSideBar'; 
+                main.style.filter='blur(2px)';     
+            }
+            else
+            {
+                nav.style.marginLeft= '-100vw';  
+                nav.style.animationName= 'showSideBar2';
+                main.style.filter=''; 
+            }
+        }
+
+        document.querySelector('main').addEventListener('click',event=>(
+            toggleBar()
+        ))
+        document.getElementById('btn1').addEventListener('click',event=>(
+            toggleBar()
+        ))
+        document.getElementById('btn2').addEventListener('click',event=>(
+            toggleBar()
+        ))
+
+        document.querySelector()
+
+        window.addEventListener('resize', function(event){
+            if(window.innerWidth>600 && showsdbr){
+                toggleBar();
+            }
+        });
 
 }
-
-
-//adicionar uma verificação de data >= 16 anos.
-// pesquisar como realizar uma comparação entre datas.

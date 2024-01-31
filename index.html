@@ -15,7 +15,7 @@
 
 <body>
     <header id="header">
-        <button  onclick="toggleBar()" class="btn_header">
+        <button  id="btn1" class="btn_header">
             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
               </svg>
@@ -27,7 +27,7 @@
         </div>
         
         <div class="navegation_header" id="navegation_header">
-            <button onclick="toggleBar()" class="btn_header">
+            <button id="btn2" class="btn_header">
                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
                     <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
                   </svg>
@@ -39,7 +39,7 @@
 
     </header>
 
-    <main class="main" tabindex="0" onclick="closeSidebar()">
+    <main class="main" tabindex="0">
         <h1>
             De Bugatti a Rolls-Royce: conheça os 10 carros mais caros do mundo
         </h1>
@@ -155,14 +155,15 @@
         <h3> Quer receber outras matérias como essa? Faça seu cadastro no formulário abaixo </h3>
 
         <div class="formulario" id="form">
-           <form id="form">
-            <div class="errorGeral" id="errorGeral"></div>
+            <form id="form">
+                <div class="errorGeral" id="errorGeral"></div>
+                <br>
 
                 <div class="form-control">
                     <label for="name"> Nome: </label>
                     <input type="text" id="name" placeholder="Digite seu nome aqui" autocomplete="off"> 
                     <span class= "erro" id="error1"></span>
-                   <br> <br>
+                    <br> <br>
                 </div>
 
                 <div class="form-control">
@@ -175,7 +176,7 @@
                 <button class="submit" type="submit "> ENVIAR </button><br>
                 <div id="finalizacao"></div>
     
-          </form>
+            </form>
         </div>
     
     </article>
@@ -197,43 +198,5 @@
 
     </div>
    
-<!-- pequeno trecho de javascript. Optei por fazer no html para melhor manutenção-->
-    <script> 
-        var main = document.querySelector('.main')
-        var nav = document.getElementById('navegation_header')
-        var showsdbr= false
-    
-        function toggleBar(){ 
-            showsdbr= !showsdbr
-            if(showsdbr){
-                nav.style.marginLeft= '-1.5vw';
-                nav.style.animationName= 'showSideBar'; 
-                main.style.filter='blur(2px)';     
-            }
-            else
-            {
-                nav.style.marginLeft= '-100vw';  
-                nav.style.animationName= 'showSideBar2';
-                main.style.filter=''; 
-            }
-        }
-
-        function closeSidebar(){
-            if(showsdbr){
-                toggleBar();
-            }
-        }
-
-        window.addEventListener('resize', function(event){
-            if(window.innerWidth>600 && showsdbr){
-                toggleBar();
-            }
-        });
-
-        
-
-
-    </script>
-
 </body>
 </html>
