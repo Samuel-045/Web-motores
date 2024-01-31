@@ -197,15 +197,15 @@ img:hover{
     
 }
 
-.formulario button{
+.formulario .submit{
     border-radius: 4px;
 }
-.formulario input, button{
+.formulario input, .submit{
     background-color: transparent;
     padding: 0.6vw;
 }
 
-.formulario input{
+.formulario input[class="campo"]{
     /*reset aparence*/
     -moz-appearance: none;
     -webkit-appearance: none;

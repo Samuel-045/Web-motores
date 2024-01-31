@@ -14,15 +14,17 @@ window.onload = function (){
         var auxErro2=false// <-
         const nameValue = document.getElementById('name').value.trim()
         const emailValue = document.getElementById('email').value.trim()
-        
+
+        //'molde'(regex) para fazer a validação do nome
+        const RxNome = /^([A-Za-z{ÃãàÀÁáÇçèÈÉéÍíÜüÓóÒòôÔ}]{1,})([\s]?)([A-Za-z{ÃãàÀÁáÇçèÈÉéÍíÜüÓóÒòôÔ}]{0,}?)(\s?)$/
+        const condNome= RxNome.test(nameValue)
+
         if(nameValue === ''){
             document.getElementById("error1").innerHTML="Preencha o campo";
             auxErro = true
-        }else if(nameValue.length <3){
+        }else if(!condNome){
             document.getElementById("error1").innerHTML="Nome Inválido";
             auxErro = true
-        }else{
-            document.getElementById("error1").innerHTML="Nome Válido";
         }
 
         //'molde'(regex) para fazer a validação do email
@@ -35,16 +37,21 @@ window.onload = function (){
         }else if(!cond){
             document.getElementById("error2").innerHTML="Email Inválido"
             auxErro2 = true
-        }else{
-            document.getElementById("error2").innerHTML="Email válido"
         }
 
+        const limpaCampos = () => {
+            const campos = document.querySelectorAll("input[class='campo']")
+            campos.forEach(campo => {
+                campo.value=''
+            })
+        }
         if(auxErro || auxErro2){
             document.getElementById("errorGeral").innerHTML="<span>Preencha os campos corretamente</span>"
             document.getElementById("finalizacao").innerHTML="<p> </p>"
         }else if(auxErro!= true && auxErro2!=true){
             document.getElementById("errorGeral").innerHTML="<p> </p>"
-            document.getElementById("finalizacao").innerHTML="Cadastro realizado "+emailValue;
+            document.getElementById("finalizacao").innerHTML="Cadastro realizado "+nameValue;
+            limpaCampos()
         }
 
     }
@@ -82,8 +89,6 @@ window.onload = function (){
         document.getElementById('btn2').addEventListener('click',event=>(
             toggleBar()
         ))
-
-        document.querySelector()
 
         window.addEventListener('resize', function(event){
             if(window.innerWidth>600 && showsdbr){
