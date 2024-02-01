@@ -9,6 +9,38 @@ window.onload = function (){
     })
 
 
+    //const respGet = () => JSON.parse(localStorage.getItem('registro')) ?? []
+    //const respSet = (obj) => localStorage.setItem('registro',JSON.stringify(obj));
+
+    const respGet = () => JSON.parse(localStorage.getItem('WM-registro')) ?? []
+    const respSet = (obj) => localStorage.setItem('WM-registro',JSON.stringify(obj))
+    function verificar(email){
+        const dados = respGet()
+        var cond = true
+        dados.forEach(usuario => {
+            if(usuario.Obemail == email){
+                document.getElementById("error2").innerHTML="Email já está em uso"
+                cond = false
+            }
+        })
+
+        if(cond){
+            document.getElementById("error2").innerHTML=" "
+        }
+        return cond
+    }
+
+    function cadastrar(nome, email){
+        obj = {
+            Obnome : nome,
+            Obemail : email
+        }
+
+        const dados = respGet()
+        dados.push(obj)
+        respSet(dados)
+    }
+
     function checkInputs(){
         var auxErro=false //variaveis para ativar a mensagem de erro geral <-
         var auxErro2=false// <-
@@ -54,9 +86,15 @@ window.onload = function (){
             document.getElementById("errorGeral").innerHTML="<span>Preencha os campos corretamente</span>"
             document.getElementById("finalizacao").innerHTML="<p> </p>"
         }else if(auxErro!= true && auxErro2!=true){
-            document.getElementById("errorGeral").innerHTML="<p> </p>"
-            document.getElementById("finalizacao").innerHTML="Cadastro realizado "+nameValue;
-            limpaCampos()
+            let condCadastro = verificar(emailValue)
+            console.log(condCadastro)
+            if(condCadastro){    
+                cadastrar(nameValue,emailValue)
+                document.getElementById("errorGeral").innerHTML="<p> </p>"
+                document.getElementById("finalizacao").innerHTML="Cadastro realizado "+nameValue;
+                limpaCampos()
+            }
+            
         }
 
     }
@@ -66,39 +104,39 @@ window.onload = function (){
         checkInputs()
     })
 
+    //código para o side bar
     var main = document.querySelector('.main')
-        var nav = document.getElementById('navegation_header')
-        var showsdbr= false
-    
-        function toggleBar(){ 
-            showsdbr= !showsdbr
-            if(showsdbr){
-                nav.style.marginLeft= '-1.5vw';
-                nav.style.animationName= 'showSideBar'; 
-                main.style.filter='blur(2px)';     
-            }
-            else
-            {
-                nav.style.marginLeft= '-100vw';  
-                nav.style.animationName= 'showSideBar2';
-                main.style.filter=''; 
-            }
+    var nav = document.getElementById('navegation_header')
+    var showsdbr= false
+    function toggleBar(){ 
+        showsdbr= !showsdbr
+        if(showsdbr){
+            nav.style.marginLeft= '-1.5vw';
+            nav.style.animationName= 'showSideBar'; 
+            main.style.filter='blur(2px)';     
         }
+        else
+        {
+            nav.style.marginLeft= '-100vw';  
+            nav.style.animationName= 'showSideBar2';
+            main.style.filter=''; 
+        }
+    }
 
-        document.querySelector('main').addEventListener('click',event=>(
-            toggleBar()
-        ))
-        document.getElementById('btn1').addEventListener('click',event=>(
-            toggleBar()
-        ))
-        document.getElementById('btn2').addEventListener('click',event=>(
-            toggleBar()
-        ))
+    document.querySelector('main').addEventListener('click',event=>(
+        toggleBar()
+    ))
+    document.getElementById('btn1').addEventListener('click',event=>(
+        toggleBar()
+    ))
+    document.getElementById('btn2').addEventListener('click',event=>(
+        toggleBar()
+    ))
 
-        window.addEventListener('resize', function(event){
-            if(window.innerWidth>600 && showsdbr){
-                toggleBar();
-            }
-        });
+    window.addEventListener('resize', function(event){
+        if(window.innerWidth>600 && showsdbr){
+            toggleBar();
+        }
+    });
 
 }
