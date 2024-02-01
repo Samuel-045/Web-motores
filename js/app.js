@@ -25,7 +25,10 @@ window.onload = function (){
         }else if(!condNome){
             document.getElementById("error1").innerHTML="Nome Inválido";
             auxErro = true
+        }else{
+            document.getElementById("error1").innerHTML=" "
         }
+
 
         //'molde'(regex) para fazer a validação do email
         const regex = /^[a-z0-9]+@[a-z0-9.-]+\.[a-z]{2,}$/i
@@ -37,6 +40,8 @@ window.onload = function (){
         }else if(!cond){
             document.getElementById("error2").innerHTML="Email Inválido"
             auxErro2 = true
+        }else{
+            document.getElementById("error2").innerHTML=" "
         }
 
         const limpaCampos = () => {
