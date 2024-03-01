@@ -18,8 +18,8 @@ body{
 }
 
 *{
-    margin: 0vw;
-    padding: 0vw;
+    margin: 0;
+    padding: 0;
 }
 
 main>h2{ /*Mudança somente para o h2 filho do main */
@@ -75,19 +75,22 @@ header, .navegation_header{
     z-index: 2;
 }
 
+.navegation_header a[value='true']{
+    background-color: var(--black);
+}
 
 .navegation_header a{
     text-decoration: none;
     color: var(--branco);
     text-align: center;
     gap: 5vw;
+    padding: 0 5px;
+    border-radius: 0.5vw;
 }
 
 header a:hover{
     background-color: var(--black);
     color: var(--branco);
-    border-radius: 0.5vw;
-    padding: 1px;
 }
 
 header img{
@@ -243,12 +246,17 @@ img:hover{
     padding: 0.2vw;
 }
 
-.footer{
+footer{
     color:var(--branco);
     background: var(--azul_marinho);
-    margin: initial;
-    padding: initial;
     padding: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+footer .esqFoot,
+footer .dirFoot{
+    width: 40%;
 }
 
 .alinhamento{
@@ -259,7 +267,7 @@ img:hover{
     color: white;
 }
 
-.footer img{
+footer img{
     max-width: initial;
     max-height: initial;
     max-width: 50px;
