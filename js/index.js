@@ -7,6 +7,7 @@ window.onload = function (){
             document.title= "Hey, continue lendo"
         }
     })
+    
 
     const respGet = () => JSON.parse(localStorage.getItem('WM-registro')) ?? []
     const respSet = (obj) => localStorage.setItem('WM-registro',JSON.stringify(obj))
@@ -118,7 +119,7 @@ window.onload = function (){
             main.style.filter=''; 
         }
     }
-
+    
     document.querySelector('main').addEventListener('click',event=>(
         toggleBar()
     ))
