@@ -22,6 +22,11 @@ body{
     padding: 0;
 }
 
+main{
+    padding: 0 20px;
+    margin: 0 0 70px 0;
+}
+
 main>h2{ /*Mudança somente para o h2 filho do main */
     margin-bottom: 10px;
 }
@@ -52,6 +57,7 @@ header{
     box-shadow: 0.1px 5px 5px var(--branco);
     display: flex;
     justify-content: space-between;
+    padding: 14px;
 }
 
 .logo_header{
@@ -190,7 +196,7 @@ img:hover{
 
 .formulario{
     font-weight: bold;
-    margin: 30px auto;
+    margin: 0 auto;
     
     padding: 35px, 64px;
     width: 100%;
@@ -245,7 +251,7 @@ img:hover{
 }
 
 footer{
-    margin-top: 20px;
+    margin-top: 50px;
     color:var(--branco);
     background: var(--azul_marinho);
     padding: 20px;
@@ -253,12 +259,29 @@ footer{
     justify-content: space-around;
 }
 
-footer .esqFoot,
-footer .dirFoot{
-    width: 40%;
+@media (min-width:250px) {
+    footer{
+        flex-direction: column;
+    }
+
+    footer .esqFoot,
+    footer .dirFoot{
+        width: 100%;
+    }
+}
+@media (min-width:768px){
+    footer{
+        flex-direction: row;
+    }
+
+    footer .esqFoot,
+    footer .dirFoot{
+        width: 45%;
+    }
 }
 
-.alinhamento{
+.alinhamento,
+footer .dirFoot p{
     margin-top: 0.6vw;
 }
 
@@ -266,12 +289,6 @@ footer .dirFoot{
     color: white;
 }
 
-footer img{
-    max-width: initial;
-    max-height: initial;
-    max-width: 50px;
-    max-height: 50px;
-    min-height: 30px;
-    min-width: 30px;
+footer p span{
+    text-decoration: underline;
 }
-
