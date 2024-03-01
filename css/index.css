@@ -190,13 +190,11 @@ img:hover{
 
 .formulario{
     font-weight: bold;
-    margin:32px auto;
-
+    margin: 30px auto;
     
     padding: 35px, 64px;
     width: 100%;
     max-width: 30vw;
-    
     
 }
 
@@ -247,6 +245,7 @@ img:hover{
 }
 
 footer{
+    margin-top: 20px;
     color:var(--branco);
     background: var(--azul_marinho);
     padding: 20px;
