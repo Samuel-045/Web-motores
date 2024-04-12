@@ -104,10 +104,11 @@ window.onload = function (){
     //código para o side bar
     var main = document.querySelector('.main')
     var nav = document.getElementById('navegation_header')
-    var showsdbr= false
-    function toggleBar(){ 
-        showsdbr= !showsdbr
-        if(showsdbr){
+    var fechar = false
+    var abrir = true
+    function toggleBar(cond){ 
+        
+        if(cond){
             nav.style.marginLeft= '-1.5vw';
             nav.style.animationName= 'showSideBar'; 
             main.style.filter='blur(2px)';     
@@ -121,18 +122,18 @@ window.onload = function (){
     }
     
     document.querySelector('main').addEventListener('click',event=>(
-        toggleBar()
+        toggleBar(fechar)
     ))
     document.getElementById('btn1').addEventListener('click',event=>(
-        toggleBar()
+        toggleBar(abrir)
     ))
     document.getElementById('btn2').addEventListener('click',event=>(
-        toggleBar()
+        toggleBar(fechar)
     ))
 
     window.addEventListener('resize', function(event){
         if(window.innerWidth>600 && showsdbr){
-            toggleBar();
+            toggleBar(fechar);
         }
     });
 

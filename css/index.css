@@ -140,16 +140,16 @@ header .btn_header{
         flex-direction: column;
         top: 0;
         background-color: var(--azul_sidebar);
-        padding: 2vh;
+        padding: 4vh 6vh;
         height: 100%;
         width:30vw;
         margin-left: -100vw;
         animation-duration: 0.8s;
     }
     .navegation_header a{
-        margin-top: 0.9vw;
+        margin-top: 8vw;
         color: var(--branco);
-        font-size: 1.3vh;
+        font-size: 1.9vh;
     }
     }
     
