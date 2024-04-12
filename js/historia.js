@@ -11,36 +11,37 @@ window.onload = function(){
     //código para o side bar
     var main = document.querySelector('.main')
     var nav = document.getElementById('navegation_header')
-    var fechar = false
-    var abrir = true
+    var assegurador = 1
     function toggleBar(cond){ 
-        
         if(cond){
             nav.style.marginLeft= '-1.5vw';
             nav.style.animationName= 'showSideBar'; 
-            main.style.filter='blur(2px)';     
+            main.style.filter='blur(2px)';  
+            assegurador=2
         }
-        else
+        else if(!cond && assegurador==2)
         {
             nav.style.marginLeft= '-100vw';  
             nav.style.animationName= 'showSideBar2';
             main.style.filter=''; 
         }
+
     }
     
     document.querySelector('main').addEventListener('click',event=>(
-        toggleBar(fechar)
+        toggleBar(false, assegurador)
     ))
     document.getElementById('btn1').addEventListener('click',event=>(
-        toggleBar(abrir)
+        toggleBar(true)
+        
     ))
     document.getElementById('btn2').addEventListener('click',event=>(
-        toggleBar(fechar)
+        toggleBar(false, assegurador)
     ))
 
     window.addEventListener('resize', function(event){
         if(window.innerWidth>600 && showsdbr){
-            toggleBar(fechar);
+            toggleBar(false, assegurador);
         }
     });
 }
