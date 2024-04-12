@@ -25,7 +25,6 @@ body{
 main{
     padding: 0 20px;
     margin: 0 0 70px 0;
-    overflow: hidden;
 }
 
 main img{
@@ -94,9 +93,8 @@ header, .navegation_header{
     text-decoration: none;
     color: var(--branco);
     text-align: center;
-    gap: 5vw;
-    padding: 0 5px;
-    border-radius: 0.5vw;
+    padding: 5px 25px;
+    border-radius: 1vw;
 }
 
 header a:hover{
@@ -148,7 +146,7 @@ header .btn_header{
         animation-duration: 0.8s;
     }
     .navegation_header a{
-        margin-top: 8vw;
+        margin-top: 4vh;
         color: var(--branco);
         font-size: 1.9vh;
     }

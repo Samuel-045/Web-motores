@@ -16,7 +16,8 @@ window.onload = function(){
         if(cond){
             nav.style.marginLeft= '-1.5vw';
             nav.style.animationName= 'showSideBar'; 
-            main.style.filter='blur(2px)';  
+            main.style.filter='blur(2px)';
+            document.body.style.overflow='hidden'  
             assegurador=2
         }
         else if(!cond && assegurador==2)
@@ -24,6 +25,7 @@ window.onload = function(){
             nav.style.marginLeft= '-100vw';  
             nav.style.animationName= 'showSideBar2';
             main.style.filter=''; 
+            document.body.style.overflow='auto'
         }
 
     }
