@@ -11,7 +11,7 @@
   No findar da página home há a opção de cadastrar-se no banco de dados da empresa, afim de receber novas notícias do meio automotivo.
 </p>
 
-<h2> Imagens :framed_picture: </h2>
+<h2>:arrow_forward: Software em ação</h2>
  <img src="https://github.com/Samuel-045/Web-motores/assets/95144250/b7248f37-113e-4dee-b823-2b04c5394db2">
 
   <div align ='center'>
